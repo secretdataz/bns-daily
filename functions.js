@@ -7,10 +7,10 @@ function pad(num, size) {
 function prettyDate(date, startDate) {
     var secs = Math.floor((date.getTime() - startDate.getTime()) / 1000);
     if (secs < 0) return false;
-    if (secs < 60) return secs + " seconds(s)";
-    if (secs < 3600) return Math.floor(secs / 60) + " minutes(s)";
-    if (secs < 86400) return Math.floor(secs / 3600) + " hour(s)";
-    if (secs < 604800) return Math.floor(secs / 86400) + " day(s)";
+    if (secs < 60) return secs + " วินาที";
+    if (secs < 3600) return Math.floor(secs / 60) + " นาที";
+    if (secs < 86400) return Math.floor(secs / 3600) + " ชั่วโมง";
+    if (secs < 604800) return Math.floor(secs / 86400) + " วัน";
     return date.toDateString();
 }
 
@@ -118,7 +118,7 @@ function echoTimeTrackerText() {
 
         if(!toGo) {
             if(!alerted) {
-                alert('The dailies just reset. Reload the site or swith to another daily tab to clear the data');
+                alert('เควสประจำวันรีเซ็ตแล้ว Refresh เว็บหรือสลับไปยังแท็บ daily อื่นเพื่อล้างข้อมูล');
                 alerted = true;
             }
             toGo = 'the past';
@@ -126,10 +126,10 @@ function echoTimeTrackerText() {
 
         //console.log(toGo);
 
-        $('#daily-reset').text('In ' + toGo  + ' (' + pad(settings.data.resetTime.getHours(), 2) + ':' + pad(settings.data.resetTime.getMinutes(), 2) + ')');
+        $('#daily-reset').text('ใน: ' + toGo  + ' (' + pad(settings.data.resetTime.getHours(), 2) + ':' + pad(settings.data.resetTime.getMinutes(), 2) + ')');
         //$('#edit-time').show();
     } else {
-        $('#daily-reset').text('Please select a region');
+        $('#daily-reset').text('โปรดเลือกเซิฟเวอร์');
         //$('#edit-time').hide();
     }
 }

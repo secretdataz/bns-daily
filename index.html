@@ -5,8 +5,8 @@
 
         <!--Charset, Description & Title -->
         <meta charset="utf-8">
-        <meta name="description" content="Checklist for all Blade and Soul Dailies in Moonwater Plains and Silverfrost Mountains.">
-        <title>Blade and Soul Dailies</title>
+        <meta name="description" content="ตัวช่วยจำและคำนวณรายได้จากเควสประจำวันของเกม Blade and Soul เซิฟเวอร์ไทย">
+        <title>Blade and Soul - เควสประจำวัน</title>
 
         <!-- Mobile Meta Tags -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -45,13 +45,14 @@
 
         <!-- Google Analytics -->
         <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-64320934-1', 'auto');
-            ga('send', 'pageview');
+        ga('create', 'UA-102580756-1', 'auto');
+        ga('send', 'pageview');
+
         </script>
 
         <!-- Underscore Templates -->
@@ -123,10 +124,11 @@
     </head>
     <body class="js-off">
         <h1 id="title">Blade and Soul Daily List</h1>
+        <h6 id="credit">Made by <a target="_blank" href="https://github.com/Keeky">Keeky</a>, adapted to TH server by <a target="_blank" href="https://github.com/secretdataz">Secret</a></h6>
         <div id="main-wrapper">
-            <div id="notice">If you spot a mistake, please contact me via <a target="_blank" href="mailto:hi@keeky.net">Mail</a> or <a target="_blank" href="http://reddit.com/u/InD1g0">Reddit</a> so I can fix it.</div>
+            <div id="notice">หากพบข้อผิดพลาดหรือมีข้อเสนอแนะ โปรดส่งข้อเสนอแนะมาที่ <a target="_blank" href="mailto:secret@rathena.org">Mail</a></div>
             <div id="ad">
-                <div id="ad-headline">Advertisement</div>
+                <div id="ad-headline">โฆษณาจากผู้พัฒนาต้นฉบับ</div>
                 <div id="ad-content">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Apps Responsive -->
@@ -142,26 +144,26 @@
             </div>
             <table id="settings">
                 <tr>
-                    <td id="premium-settings">Your Premium Rank:
+                    <td id="premium-settings">ระดับของ VIP:
                         <select id="premium-modifier">
-                            <option value="1">No premium</option>
-                            <option value="1.1">Rank 1 - 3</option>
-                            <option value="1.2">Rank 4 - 8</option>
-                            <option value="1.3">Rank 9 or 10</option>
+                            <option value="1">ไม่มี VIP</option>
+                            <option value="1.05">ระดับ 1 - 2</option>
+                            <option value="1.1">ระดับ 3 - 4</option>
+                            <option value="1.15">ระดับ 5 - 7</option>
+                            <option value="1.2">ระดับ 8 - 9</option>
+                            <option value="1.25">ระดับ 10</option>
                         </select>
                     </td>
-                    <td id="faction-settings">Your Faction:
+                    <td id="faction-settings">สมาพันธ์:
                         <select id="faction">
-                            <option value="false">Please select</option>
-                            <option value="cerulean">Cerulean Order</option>
-                            <option value="crimson">Crimson Legion</option>
+                            <option value="false">โปรดเลือก</option>
+                            <option value="cerulean">สมาพันธ์นภาฟ้าคำราม</option>
+                            <option value="crimson">สมาพันธ์โลหิตเงาเพลิง</option>
                         </select>
                     </td>
-                    <td id="region-settings">Your Region:
+                    <td id="region-settings">เซิฟเวอร์:
                         <select id="reset-hour">
-                            <option value="not set">Please select</option>
-                            <option value="6">Europe</option>
-                            <option value="12">North America</option>
+                            <option value="-1" selected="selected">[TH] ไทย </option>
                         </select>
                     </td>
                     <td>
@@ -176,8 +178,8 @@
             </div>
             <div id="dailies">
                 <div id="time-settings">
-                    <span class="time-wrappers" id="current-time-wrapper">Local time: <span id="current-time">calculating</span></span> -
-                    <span class="time-wrappers" id="daily-reset-wrapper">Daily reset: <span id="daily-reset">calculating</span> <span id="edit-time" class="link">change</span></span>
+                    <span class="time-wrappers" id="current-time-wrapper">เวลาเครื่อง: <span id="current-time">calculating</span></span> -
+                    <span class="time-wrappers" id="daily-reset-wrapper">เควสประจำวันรีเซ็ต<span id="daily-reset">calculating</span> <span id="edit-time" class="link">change</span></span>
                     <div id="time-settings-edit"></div>
                 </div>
                 <table id="display-settings">
@@ -198,7 +200,7 @@
             </div>
         </div>
         <div id="fixed-information">
-            <div id="total-value" class="inline">Total earnings: </div><!--  - 
+            <div id="total-value" class="inline">เงินทั้งหมดที่ได้: </div><!--  - 
             resetHour: <span class="d" data-d="resetHour"></span> - 
             resetTime: <span class="d" data-d="resetTime"></span> -  -->
         </div>
@@ -206,7 +208,7 @@
             <div id="dump"></div>
             <span class="version"></span>
             <span class="debug-dump link">Debug dump</span>
-            <span class="reset-settings link">Reset local data</span>
+            <span class="reset-settings link">รีเซ็ตข้อมูล</span>
         </footer>
     </body>
 </html>
