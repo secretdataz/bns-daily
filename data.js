@@ -535,6 +535,7 @@ var dailies = [
         map: 6,
         categories: ["Dungeon", "Boss"]
     },
+
     {
         name: "เรียกไอ้ปืนโต",
         moneyReward: 21200,
@@ -542,6 +543,24 @@ var dailies = [
         location: "หมู่บ้านภูมายา",
         map: 5,
         categories: ["Open World", "Boss"]
+    },
+
+    {
+        name: "ชัยชนะในสนามลมกรด",
+        moneyReward: 12500,
+        dungeon: 0,
+        location: "หุบเขาลมหวน",
+        map: 0,
+        categories: ["PvP"]
+    },
+
+    {
+        name: "เข้าร่วมลานประลองลมกรด 3 ครั้ง",
+        moneyReward: 7800,
+        dungeon: 0,
+        location: "หุบเขาลมหวน",
+        map: 0,
+        categories: ["PvP"]
     }
 ]
 
