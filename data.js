@@ -512,6 +512,24 @@ var dailies = [
         map: 6,
         categories: ["Dungeon", "Boss"]
     },
+
+    {
+        name: "หายนะของซอลอกกุง",
+        moneyReward: 11700,
+        dungeon: 22,
+        location: "เมืองไซเว่ย",
+        map: 6,
+        categories: ["Dungeon", "Boss"]
+    },
+
+    {
+        name: "ปฏิบัติการปลิดชีพเงา",
+        moneyReward: 8800,
+        dungeon: 22,
+        location: "เมืองไซเว่ย",
+        map: 6,
+        categories: ["Dungeon", "Boss"]
+    },
 ]
 
 var defaultSettings = {
