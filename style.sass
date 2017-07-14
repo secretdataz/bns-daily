@@ -1,0 +1,743 @@
+@import framework
+
+$grey: darken(#B6C2C9, 5%)
+$greyLight: #F6F7F8
+$greyHover: #81939E
+$blue: #00A7F6
+
+$nightBg: #222222
+$nightHighlight: #2D2D2D
+$nightHighlightHover: #333333
+$nightDark: #191919
+$nightText: #F8F8F2
+
+$nightshiftDelay: 2s
+
+$tagNames: ("boss", "pvp", "open.world", "dungeon", "faction", "time.gated")
+$tagColors: (#c0392b, #d35400, #1abc9c, #f1c40f, #9b59b6, #3498db)
+
+$difficultyNames: ("easy", "normal", "challenging", "heroic")
+$difficultyColors: (#FFF, #2ecc71, #38BFE1, #A237FF)
+
+.tag
+    background-color: $nightHighlightHover
+
+@each $tag in $tagNames
+    $i: index($tagNames, $tag)
+    $color: nth($tagColors, $i)
+    .tag.#{$tag}
+        background-color: #{$color}
+
+    .night .tag.#{$tag}
+        background-color: darken($color, 20%)
+
+@each $tag in $difficultyNames
+    $i: index($difficultyNames, $tag)
+    $color: nth($difficultyColors, $i)
+    .difficulty-#{$tag}
+        color: #{$color}
+
+    .night .difficulty-#{$tag}
+        color: darken(desaturate($color, 5%), 5%)
+
+html
+    //background-color: #EDF1F2
+    background-color: #EEE
+    font-family: "Exo 2"
+    -webkit-text-size-adjust: 100%
+
+    +notMobile
+
+        &[data-density='dense']
+            #main-wrapper #dailies .daily-table td
+                padding: 10px
+
+            #main-wrapper #dailies #display-settings #display-density-wrapper .display-density .density-select.compact
+                background-color: $greyHover
+
+        &[data-density='cozy']
+            #main-wrapper #dailies .daily-table td
+                padding: 20px 10px
+
+            #main-wrapper #dailies #display-settings #display-density-wrapper .display-density .density-select.comfortable
+                background-color: $greyHover
+
+    &.hide-tags #main-wrapper #dailies #table-wrapper .tags
+        display: none
+
+    &.hide-continents #main-wrapper #dailies .daily-table td .continent-icon
+        display: none
+
+    &.night
+        background-color: $nightHighlight
+        color: $nightText
+
+        .checkbox
+            background-color: $nightBg
+            border-color: $nightHighlightHover
+
+        select
+            background-color: $nightHighlightHover
+
+            &:hover
+                background-color: $nightBg
+
+        &[data-density='dense']
+            #main-wrapper #dailies #display-settings #display-density-wrapper .display-density .density-select.compact
+                background-color: $nightHighlight
+
+        &[data-density='cozy']
+            #main-wrapper #dailies #display-settings #display-density-wrapper .display-density .density-select.comfortable
+                background-color: $nightHighlight
+
+        #main-wrapper #dailies #display-settings #display-density-wrapper .display-density
+            background-color: $nightHighlight
+
+            .density-select
+                background-color: lighten($nightHighlight, 5%)
+
+                &:hover
+                    background-color: $nightHighlightHover
+
+        #main-wrapper
+
+            #ad
+                #ad-headline
+                    color: #FFF
+                    background-color: #1A2E4D
+
+                #ad-content
+                    background-color: #1A2E4D
+
+            #tab-wrapper
+                //background-color: darken($nightHighlight, 2%)
+                border-color: $nightDark
+
+                #tabs
+
+                    .tab
+                        background-color: $nightBg
+                        border-color: $nightDark
+
+                        &.active
+                            border-bottom-color: $nightBg
+                            border-top-color: $blue
+                            color: #FFF
+
+                #add-tab:hover
+                    color: #FFF
+
+            #dailies
+                background-color: $nightBg
+                border-color: $nightDark
+
+                .daily-table
+
+                    th
+                        background-color: $nightBg
+                        border-color: $nightDark
+
+                        &:hover
+                            background-color: $nightHighlight
+
+                    tr
+                        border-color: $nightDark
+
+                        &:hover
+                            background-color: $nightHighlight
+
+        #fixed-information
+            background-color: $nightBg
+            border-color: $nightDark
+            color: $nightText
+
+        #dump
+            background-color: $nightBg
+            border-color: $nightDark
+
+select
+    background: $grey url('dropdown-arrow-down.png') no-repeat right 10px center / 16px
+    color: #FFF
+    border: none
+    padding: 6px 24px 6px 4px
+    border-radius: 4px
+    margin: 0 4px
+    +vendorize(appearance, none)
+    text-indent: 0.01px
+    text-overflow: ''
+    display: inline-block
+
+    &.compact
+        padding: 0 24px 0 4px
+
+    +tablet
+        display: block
+        width: 100%
+        margin: 10px 0
+
+    &:hover
+        background-color: $greyHover
+
+    option
+        +vendorize(appearance, none)
+        border: none
+        padding: 5px
+        background-color: #FFF
+        color: $greyHover
+
+.inline
+    display: inline-block
+
+%checkboxChecked
+    background-image: url('check.png')
+    background-color: $blue
+    border-color: $blue
+    opacity: 1
+
+    &:hover
+        background-color: darken($blue, 5%)
+        border-color: darken($blue, 5%)
+
+.label
+    color: $greyHover
+    font-size: 16px
+    margin: 0 6px
+    cursor: pointer
+
+    &:hover .checkbox
+        cursor: default
+        background-color: $greyHover
+
+    &:hover .checkbox.checked,  .checkbox.checked
+        @extend %checkboxChecked
+
+.checkbox
+    +size(16px)
+    background: no-repeat center center
+    background-size: 10px
+    border: 1px solid $greyHover
+    background-color: $grey
+    margin: 0 6px
+    
+    &:hover
+        cursor: default
+        background-color: $greyHover
+
+.currency
+    background: center right no-repeat
+    background-size: 16px
+    padding: 2px 18px 2px 4px
+    display: inline-block
+
+
+    &.gold
+        background-image: url('gold.png')
+
+    &.silver
+        background-image: url('silver.png')
+
+    &.copper
+        background-image: url('copper.png')
+
+#title
+    font-size: 28px
+    text-align: center
+    color: $grey
+    font-weight: 300
+    text-align: center
+    margin: 30px 0 10px 0
+
+.link
+    color: $blue
+    padding-right: 8px
+    font-size: 12px
+
+    &:hover
+        text-decoration: underline
+        cursor: pointer
+
+.donate-button
+    color: #FFF
+    padding: 4px 12px 4px 27px
+    border-radius: 6px
+    text-decoration: none
+    margin: 0 4px
+
+    &.paypal
+        border: 1px solid darken(#1189D6, 10%)
+        background-color: #1189D6
+        background: url('http://cdn.keeky.net/paypal/logo-small.png') center center no-repeat, linear-gradient(to bottom, #1189D6 0%,darken(#1189D6, 10%) 100%)
+
+        &:hover
+            background: url('http://cdn.keeky.net/paypal/logo-small.png') center center no-repeat, darken(#1189D6, 10%)
+
+    &.bitcoin
+        border: 1px solid darken(#F7931A, 10%)
+        background-color: #F7931A
+        background: url('http://cdn.keeky.net/bitcoin/logo-small.png') center center no-repeat, linear-gradient(to bottom, #F7931A 0%,darken(#F7931A, 10%) 100%)
+    
+        &:hover
+            background: url('http://cdn.keeky.net/bitcoin/logo-small.png') center center no-repeat, darken(#F7931A, 10%)
+
+#main-wrapper
+    max-width: 1100px
+    margin: 50px auto
+
+    #notice
+        text-align: center
+        margin: 20px 0 35px
+        color: $greyHover
+
+        a
+            text-decoration: none
+            color: $blue
+
+            &:hover
+                cursor: pointer
+                text-decoration: underline
+
+    #settings
+        margin-bottom: 12px
+        white-space: nowrap
+        width: 100%
+
+        +tablet
+            td
+                padding: 10px
+                display: block
+
+        #premium-settings, #faction-settings, #region-settings
+            color: #506470
+            padding-left: 8px
+    
+    #tab-wrapper
+        padding: 12px 20px 0 20px
+        //border: 1px solid #CCC
+        //background-color: #F5F5F5
+        //border-radius: 5px 5px 0 0
+
+        +tablet
+            display: none
+
+        #tabs
+            display: inline-block
+
+            .tab
+                background-color: #FCFCFC
+                position: relative
+                top: 1px
+                display: inline-block
+                padding: 12px 18px
+                border-radius: 5px 5px 0 0
+                border-right: 1px solid #DDD
+                border-top: 1px solid #DDD
+                border-bottom: 1px solid #DDD
+                color: $grey
+                height: 42px
+                width: 160px
+
+                .tab-name-edit
+                    border: none
+                    font-size: 14px
+                    color: #FFF
+                    padding: 4px 0 0
+                    margin: 0 0 1px 0
+                    width: 100%
+                    border-bottom: 1px solid #CCC
+                    font-family: "Exo 2"
+                    color: $greyHover
+                    background-color: transparent
+
+                .tab-name
+                    max-width: 100px
+                    display: inline-block
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    white-space: nowrap
+                    font-size: 14px
+                    padding-bottom: 4px
+
+                .tab-icon
+                    opacity: 0.7
+                    +size(12px)
+                    display: inline-block
+                    background: no-repeat center center
+                    background-size: 10px
+                    margin: 2px 3px 0 3px
+                    float: right
+
+                    &:hover
+                        cursor: default
+                        opacity: 1
+
+                    &.edit-tab
+                        display: none
+                        background-image: url('edit.png')
+
+                    &.close-tab
+                        background-image: url('close.png')
+
+                &:first-child
+                    border-left: 1px solid #DDD
+
+                &:hover
+                    background-color: #FFF
+                    cursor: pointer
+                    color: $greyHover
+
+                &.active
+                    color: #333
+                    border-bottom: 1px solid #FFF
+                    background-color: #FFF
+                    border-top: 1px solid $blue
+                    background-color: #FFF
+
+                    .close-tab
+                        display: none
+
+                    .edit-tab
+                        display: inline-block
+
+        #add-tab
+            position: relative
+            top: 1px
+            display: inline-block
+            padding: 6px 18px 0px 18px
+            color: $grey
+            font-size: 24px
+            vertical-align: top
+
+            &:hover
+                color: #333
+                cursor: pointer
+
+
+    #dailies
+        background-color: #FFF
+        padding: 30px 40px 40px 40px
+        border-radius: 5px
+        border: 1px solid #CCC
+        width: 100%
+
+        +mobile
+            padding: 0
+
+        #time-settings
+            font-size: 12px
+            color: $greyHover
+            text-align: right
+            width: 100%
+            margin-bottom: 20px
+
+            #edit-time
+                display: none
+
+            #time-settings-edit
+                margin-top: 20px
+                display: none
+
+                #save-reset-time, #detect-reset-time
+                    color: $blue
+                    cursor: pointer
+
+                    &:hover
+                        text-decoration: underline
+
+            +mobile
+                text-align: left
+                line-height: 18px
+                padding: 15px
+
+                .time-wrappers
+                    display: block
+
+        #display-settings
+            margin-bottom: 20px
+            width: 100%
+
+            #tag-toggle, #night-toggle
+                margin: 10px 5px
+
+            #display-density-wrapper
+                text-align: right
+                vertical-align: middle
+                padding-right: 10px
+
+                +mobile
+                    display: none
+
+                .display-density
+                    background-color: $greyHover
+                    display: inline-block
+                    border-radius: 4px
+                    height: 30px
+
+                    .density-select
+                        background: $grey center center no-repeat
+                        background-size: 24px
+                        +size(30px)
+                        display: inline-block
+                        border-radius: 4px
+
+                        &:hover
+                            background-color: darken($grey, 5%)
+                            cursor: pointer
+
+                        &.compact
+                            background-image: url('view-dense.png')
+
+                        &.comfortable
+                            background-image: url('view-comfortable.png')
+
+        #table-wrapper
+            overflow: auto
+
+        .daily-table
+            width: 100%
+    
+            .tableFloatingHeaderOriginal tr
+                border-bottom: 2px solid $greyLight
+
+            .daily-progress
+                width: 60px
+
+                &.warning
+                    font-weight: 600
+                    color: #c0392b
+
+            thead
+                +mobile
+                    display: none
+
+                tr
+                    border-bottom: 2px solid $greyLight
+
+            th
+                color: #506470
+                text-transform: uppercase
+                font-size: 10px
+                text-align: left
+                padding: 15px 20px 15px 10px
+                font-weight: 600
+                background: #FFF no-repeat right 6px center
+                background-size: 10px
+                white-space: nowrap
+                border-right: 2px solid $greyLight
+
+                &:last-child
+                    border-right: none
+
+                &:hover
+                    cursor: pointer
+                    background-color: $greyLight
+
+                &.tablesorter-headerAsc
+                    background-image: url('dropdown-arrow-up-grey.png')
+
+                &.tablesorter-headerDesc
+                    background-image: url('dropdown-arrow-down-grey.png')
+
+            =before
+                float: left
+                padding-right: 10px
+
+            td
+                +vendorize(transition, all 200ms ease)
+                color: #81939E
+                font-size: 12px
+                padding: 20px 10px
+                vertical-align: middle
+                white-space: nowrap
+
+                +mobile
+                    padding: 15px
+
+                    &:before
+                        min-width: 100px
+
+                    &.row-done
+                        display: none
+
+                    &.row-tags
+                        padding: 25px 15px 10px 15px
+                        display: block
+
+                    &.row-name
+                        padding: 5px 15px
+                        display: block
+                        line-height: 16px
+                        +vendorize(text-overflow, ellipsis)
+                        overflow: hidden
+
+                        &:before
+                            +before
+                            height: 20px
+                            content: 'Quest Name: '
+
+                    &.row-location
+                        padding: 5px 15px 0 15px
+                        display: block
+
+                        &:before
+                            +before
+                            content: 'Location: '
+
+                        &:after
+                            content: ', '
+
+                    &.row-map
+                        padding: 2px 15px 0 15px
+                        display: block
+
+                        &:before
+                            +before
+                            display: block
+                            content: '\00a0'
+
+                    &.row-gold
+                        padding: 15px 15px 0 15px
+                        display: block
+
+                        &:before
+                            +before
+                            content: 'Money: '
+
+                    &.row-misc
+                        padding: 10px 15px 15px 15px
+                        display: block
+
+                        &:before
+                            +before
+                            content: 'Other rewards: '
+
+                .tag
+                    padding: 3px 6px
+                    color: #FFF
+                    border-radius: 3px
+                    margin-right: 5px
+
+                .continent-icon
+                    width: 16px
+                    height: 16px
+                    display: inline-block
+                    background: center center
+                    background-size: 16px
+                    padding: 4px
+                    margin-right: 6px
+                    position: relative
+                    top: 3px
+
+                    &.Silverfrost.Mountains
+                        background-image: url('silverfrost.png')
+
+                    &.Moonwater.Plains
+                        background-image: url('moonwater.png')
+
+                    &.Arena
+                        background-image: url('arena.png')
+
+                    &:hover:before
+                        content: attr(title)
+                        background-color: rgba(#000, 0.5)
+                        border-radius: 4px
+                        color: #fff
+                        content: attr(title)
+                        left: 10px
+                        padding: 5px
+                        position: absolute
+                        top: -30px
+
+            tbody
+                tr
+                    border-top: 2px solid $greyLight
+
+                    &.group-header
+                        td
+                            background: url('dropdown-arrow-down-grey.png') no-repeat left 10px center
+                            background-size: 14px
+                            padding: 10px 10px 10px 30px
+                            text-transform: uppercase
+                            font-size: 12px
+                            font-weight: 500
+
+                        &.collapsed
+                            td
+                                background-image: url('dropdown-arrow-left-grey.png')
+
+                    &.group-hidden
+                        display: none
+
+                    &.done
+
+                        td:not(.dont-fade)
+                            opacity: 0.2
+
+                        .checkbox
+                            @extend %checkboxChecked
+
+                    &:hover
+                        background-color: $greyLight
+                        cursor: pointer
+
+        #total-value
+            text-align: right
+            color: $grey
+            font-size: 14px
+            margin: 10px
+            height: 18px
+
+#fixed-information
+    position: fixed
+    bottom: 0
+    text-align: center
+    background-color: #FFF
+    border-top: 2px solid #EFEFEF
+    width: 100%
+    color: #333
+    padding: 10px 5px
+    height: 40px
+
+footer
+    color: $grey
+    padding: 10px
+    font-size: 14px
+    max-width: 100%
+    margin-bottom: 40px
+
+    .debug-dump
+        margin-left: 10px
+
+    #dump
+        display: none
+        color: $greyHover
+        padding: 20px
+        line-height: 16px
+        font-size: 12px
+        border: 1px solid $grey
+        margin: 10px 0
+        background-color: #FFF
+        word-wrap: break-word
+
+#ad
+    position: relative
+    margin: 20px 10px
+
+    #ad-headline
+        display: inline-block
+        padding: 7px 12px
+        border-radius: 4px 4px 0 0
+        font-size: 14px
+        color: #333
+        background-color: #FFF8E6
+
+
+    #ad-content
+        background-color: #FFF8E6
+        border-radius: 0 4px 4px 4px
+        padding: 7px
+
+    #testad
+        background-color: #FFF
+        width: 728px
+        height: 90px
+        margin: 0 auto
