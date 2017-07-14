@@ -98,8 +98,42 @@ var dungeons = [
     {//15
         name: "ซากปรักไซเว่ย",
         difficulty: 0
-    }
+    },
 
+    {//16
+        name: "แท่นแห่งการฟื้นคืนชีพ",
+        difficulty: 3
+    },
+
+    {//17
+        name: "ถ้ำเยติ",
+        difficulty: 3
+    },
+
+    {//18
+        name: "ฝันร้ายแห่งราชวังราตรีผนึก",
+        difficulty: 3
+    },
+
+    {//19
+        name: "เขาวงกตสเน่หา",
+        difficulty: 3
+    },
+
+    {//20
+        name: "โกดังน้ำแข็ง",
+        difficulty: 3
+    },
+
+    {//21
+        name: "แท่นอาณัติแห่งสวรรค์",
+        difficulty: 3
+    },
+
+    {//22
+        name: "อนุสรณ์ซอลอกกุง",
+        difficulty: 3
+    },
 ]
 
 maps = [
@@ -381,6 +415,87 @@ var dailies = [
         dungeon: 14,
         location: "ที่ราบละอองนภาทางเหนือ",
         map: 8,
+        categories: ["Dungeon", "Boss"]
+    },
+
+    {
+        name: "น้ำแข็งในเส้นเลือด",
+        moneyReward: 21100,
+        dungeon: 16,
+        location: "เมืองไซเว่ย",
+        map: 6,
+        categories: ["Dungeon", "Boss"]
+    },
+
+    {
+        name: "ภาพหลอนอันเหน็บหนาว",
+        moneyReward: 16700,
+        dungeon: 17,
+        location: "เมืองไซเว่ย",
+        map: 6,
+        categories: ["Dungeon", "Boss"]
+    },
+
+    {
+        name: "สุสานผีดิบที่เกรี้ยวกราด",
+        moneyReward: 9840,
+        dungeon: 18,
+        location: "เมืองไซเว่ย",
+        map: 6,
+        categories: ["Dungeon", "Boss"]
+    },
+
+    {
+        name: "ฝันร้ายที่เมืองต้องสาป",
+        moneyReward: 16700,
+        dungeon: 18,
+        location: "เมืองไซเว่ย",
+        map: 6,
+        categories: ["Dungeon", "Boss"]
+    },
+
+    {
+        name: "ผู้ทำลายประตู",
+        moneyReward: 5900,
+        dungeon: 19,
+        location: "เมืองไซเว่ย",
+        map: 6,
+        categories: ["Dungeon", "Boss"]
+    },
+
+    {
+        name: "บ่อเกิดแห่งหายนะ",
+        moneyReward: 17500,
+        dungeon: 19,
+        location: "เมืองไซเว่ย",
+        map: 6,
+        categories: ["Dungeon", "Boss"]
+    },
+
+    {
+        name: "ยามเหมันต์จบลง",
+        moneyReward: 12500,
+        dungeon: 20,
+        location: "เมืองไซเว่ย",
+        map: 6,
+        categories: ["Dungeon", "Boss"]
+    },
+
+    {
+        name: "กุหลาบจากอดีตกาล",
+        moneyReward: 21100,
+        dungeon: 21,
+        location: "เมืองไซเว่ย",
+        map: 6,
+        categories: ["Dungeon", "Boss"]
+    },
+
+    {
+        name: "พื้นที่ปิดผนึก",
+        moneyReward: 17500,
+        dungeon: 22,
+        location: "เมืองไซเว่ย",
+        map: 6,
         categories: ["Dungeon", "Boss"]
     },
 ]
