@@ -390,7 +390,7 @@ var defaultSettings = {
     resetTime: null,
     localTime: new Date(),
     lastModified: new Date(),
-    resetHour: 'not set',
+    resetHour: '-1',
     editedTime: false,
     showTags: true,
     showContinents: true,
