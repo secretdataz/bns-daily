@@ -93,7 +93,7 @@ function echoMapWithContinent(id) {
 
     console.log(m, c);
 
-    return '<span title="' + c.name + '" class="continent-icon ' + c.name + '"></span>' + m.name;
+    return '<span title="' + c.display + '" class="continent-icon ' + c.name + '"></span>' + m.name;
 }
 
 function echoCurrentTime() {

@@ -2,23 +2,28 @@ var alerted = false;
 
 var continents = [
     {//0
-        name: "อารีน่า"
+        name: "Arena",
+        display: "อารีน่า"
     },
     
     {//1
-        name: "เนินเขามังกร"
+        name: "Veridian Coast",
+        display: "เนินเขามังกร"
     },
 
     {//2
-        name: "ทะเลทรายมรณะ"
+        name: "Cinderlands",
+        display: "ทะเลทรายมรณะ"
     },
 
     {//3
-        name: "สวนสันติภาพ"
+        name: "Moonwater Plains",
+        display: "สวนสันติภาพ"
     },
 
     {//4
-        name: "บุปผาน้ำแข็ง"
+        name: "Silverfrost Mountains",
+        display: "บุปผาน้ำแข็ง"
     }
 ]
 
