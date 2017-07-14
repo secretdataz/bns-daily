@@ -503,6 +503,15 @@ var dailies = [
         map: 6,
         categories: ["Dungeon", "Boss"]
     },
+
+    {
+        name: "เงาพเนจร",
+        moneyReward: 10560,
+        dungeon: 18,
+        location: "เมืองไซเว่ย",
+        map: 6,
+        categories: ["Dungeon", "Boss"]
+    },
 ]
 
 var defaultSettings = {
