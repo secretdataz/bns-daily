@@ -139,6 +139,11 @@ var dungeons = [
         name: "อนุสรณ์ซอลอกกุง",
         difficulty: 3
     },
+
+    {//23
+        name: "หมู่บ้านภูมายา",
+        difficulty: 0
+    }
 ]
 
 maps = [
@@ -530,6 +535,14 @@ var dailies = [
         map: 6,
         categories: ["Dungeon", "Boss"]
     },
+    {
+        name: "เรียกไอ้ปืนโต",
+        moneyReward: 21200,
+        dungeon: 23,
+        location: "หมู่บ้านภูมายา",
+        map: 5,
+        categories: ["Open World", "Boss"]
+    }
 ]
 
 var defaultSettings = {
