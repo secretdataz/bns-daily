@@ -143,6 +143,16 @@ var dungeons = [
     {//23
         name: "หมู่บ้านภูมายา",
         difficulty: 0
+    },
+
+    {//24
+        name: "ฐานทัพนาเคนทร์",
+        difficulty: 0
+    },
+
+    {//25
+        name: "ท่าเรือเงาเลือดยามราตรี",
+        difficulty: 0
     }
 ]
 
@@ -561,7 +571,25 @@ var dailies = [
         location: "หุบเขาลมหวน",
         map: 0,
         categories: ["PvP"]
-    }
+    },
+
+    {
+        name: "สายการบังคับบัญชา",
+        moneyReward: 21300,
+        dungeon: 24,
+        location: "ฐานทัพนาเคนทร์",
+        map: 4,
+        categories: ["Dungeon", "Boss"]
+    },
+
+    {
+        name: "ลึกไปในเงามืด",
+        moneyReward: 23100,
+        dungeon: 25,
+        location: "ท่าเรือเงาเลือดยามราตรี",
+        map: 4,
+        categories: ["Dungeon", "Boss"]
+    },
 ]
 
 var defaultSettings = {
