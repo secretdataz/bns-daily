@@ -153,7 +153,12 @@ var dungeons = [
     {//25
         name: "ท่าเรือเงาเลือดยามราตรี",
         difficulty: 0
-    }
+    },
+	
+	{//26
+		name: "หอคอยมูชินชั้น 16-20",
+		difficulty: 3
+	}
 ]
 
 maps = [
@@ -590,6 +595,24 @@ var dailies = [
         map: 4,
         categories: ["Dungeon", "Boss"]
     },
+	
+	{
+        name: "สองต่อหนึ่ง",
+        moneyReward: 65800,
+        dungeon: 26,
+        location: "หอคอยมูชินชั้น 16-20",
+        map: 3,
+        categories: ["Dungeon", "Boss"]
+    },
+	
+	{
+        name: "ดวลกับหนุ่มผมแดง",
+        moneyReward: 189400,
+        dungeon: 26,
+        location: "หอคอยมูชินชั้น 16-20",
+        map: 3,
+        categories: ["Dungeon", "Boss"]
+    }
 ]
 
 var defaultSettings = {
